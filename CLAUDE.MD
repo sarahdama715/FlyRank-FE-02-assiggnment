@@ -1,29 +1,24 @@
+
+---
+
+## `CLAUDE.md`
+
+```markdown
 # CLAUDE.md
 
-## Project Purpose
+Project instructions for AI-assisted development on the FlyRank AI Frontend Engineering Capstone.
 
-This repository is used for the FlyRank AI Frontend Engineering Internship.
+## Project Overview
 
-## Development Stack
+This is a frontend engineering internship repository for building AI-assisted web applications. The codebase prioritizes clarity, accessibility, and maintainability over speed of generation.
 
-- JavaScript
-- Node.js
-- HTML
-- CSS
-- Git
+**Author:** Sarah Ngumbao  
+**Repository:** https://github.com/sarahdama715/Front-End-AI-engineering-
 
-## Coding Standards
+## Tech Stack
 
-- Write clean, readable code.
-- Use meaningful variable names.
-- Keep functions small and reusable.
-- Add comments where necessary.
+- HTML, CSS, JavaScript (vanilla unless a framework is explicitly added)
+- Node.js 20+ for tooling (when `package.json` exists)
+- Git + GitHub for version control
 
-## AI Assistant Guidelines
 
-When helping with this project:
-
-- Explain solutions before generating code.
-- Follow JavaScript best practices.
-- Use Conventional Commits.
-- Suggest improvements to documentation whenever possible.
