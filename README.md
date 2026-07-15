@@ -34,3 +34,28 @@ AI is used as a development accelerator, not a substitute for engineering judgme
 
 ## Project Structure
 
+
+> The structure will expand as the application grows (e.g. `src/`, `public/`, `package.json`).
+
+## Getting Started
+
+### Prerequisites
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) 20+ *(required once npm scripts are added)*
+
+### Installation
+
+```bash
+git clone https://github.com/sarahdama715/Front-End-AI-engineering-.git
+cd Front-End-AI-engineering-
+npm install and dev commands will be added once package.json is introduced.
+
+
+Author
+Sarah Ngumbao
+Frontend Engineering Intern — FlyRank AI
+
+License
+This project is licensed under the MIT License.
+
