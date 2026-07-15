@@ -1,44 +1,36 @@
-# FlyRankAI Frontend Engineering Capstone
+# FlyRank AI — Frontend Engineering Capstone
 
-## Overview
+> AI-assisted frontend applications built with modern web standards and professional software engineering practices.
 
-This repository contains my work for the FlyRank AI Frontend Engineering Internship.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-The repository will be used throughout the internship to develop AI-assisted frontend applications while following professional software engineering practices.
+## About
+
+This repository contains my work for the **FlyRank AI Frontend Engineering Internship**. It serves as a living portfolio of frontend projects developed with AI-assisted workflows while following industry-standard practices in version control, documentation, and code quality.
+
+## Goals
+
+- Build accessible, responsive frontend applications
+- Use AI tools to accelerate development without sacrificing code quality
+- Follow professional Git workflows with clear commits and documentation
+- Deliver maintainable code that is easy for teammates to review and extend
 
 ## Tech Stack
 
-- HTML
-- CSS
-- JavaScript
-- Node.js
-- Git
-- GitHub
-- Claude Code
+| Layer | Tools |
+|-------|-------|
+| **Frontend** | HTML, CSS, JavaScript |
+| **Tooling** | Git, GitHub, Node.js |
+| **AI Workflow** | Claude Code (scaffolding, refactoring, review, documentation) |
+
+## AI Engineering Workflow
+
+AI is used as a development accelerator, not a substitute for engineering judgment:
+
+1. **Plan** — Define requirements and acceptance criteria before prompting.
+2. **Build** — Use Claude Code for scaffolding, implementation, and iteration.
+3. **Review** — Manually verify logic, accessibility, responsiveness, and edge cases.
+4. **Document** — Keep README, CLAUDE.md, and commit messages accurate and current.
 
 ## Project Structure
 
-```
-README.md
-LICENSE
-.gitignore
-CLAUDE.md
-```
-
-## Getting Started
-
-Clone the repository.
-
-```bash
-git clone https://github.com/sarahdama715/flyrank-ai-frontend-capstone.git
-```
-
-Install dependencies.
-
-```bash
-npm install
-```
-
-## Author
-
-Sarah Ngumbao
