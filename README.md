@@ -33,7 +33,7 @@ AI is used as a development accelerator, not a substitute for engineering judgme
 4. **Document** — Keep README, CLAUDE.md, and commit messages accurate and current.
 
 ## Project Structure
-
+├── .gitignore ├── CLAUDE.md # AI assistant project instructions ├── LICENSE └── README.md
 
 > The structure will expand as the application grows (e.g. `src/`, `public/`, `package.json`).
 
@@ -49,13 +49,26 @@ AI is used as a development accelerator, not a substitute for engineering judgme
 ```bash
 git clone https://github.com/sarahdama715/Front-End-AI-engineering-.git
 cd Front-End-AI-engineering-
+
 npm install and dev commands will be added once package.json is introduced.
 
+Scripts
+Command              Description
+npm install          Install dependencies (coming soon)
+npm run dev          Start development server (coming soon)
+npm run build        Build for production (coming soon)
+npm test             Run tests (coming soon)
 
-Author
+Roadmap
+ Initialize frontend application scaffold
+ Add linting and formatting tooling
+ Implement first AI-assisted feature
+ Add tests and CI pipeline
+ Deploy live demo
+## Author
 Sarah Ngumbao
 Frontend Engineering Intern — FlyRank AI
 
-License
+## License
 This project is licensed under the MIT License.
 
