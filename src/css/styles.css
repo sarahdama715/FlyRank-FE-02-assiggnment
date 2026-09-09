@@ -1,0 +1,431 @@
+/* ========================================
+   CSS Custom Properties (Design Tokens)
+   ======================================== */
+
+:root {
+    /* Colors */
+    --color-primary: #2d6a4f;
+    --color-primary-dark: #1b4332;
+    --color-primary-light: #52b788;
+    --color-secondary: #d6cda4;
+    --color-accent: #e76f51;
+    
+    --color-success: #4caf50;
+    --color-error: #dc3545;
+    --color-warning: #ff9800;
+    --color-info: #2196f3;
+    
+    --color-text-primary: #212121;
+    --color-text-secondary: #666666;
+    --color-text-light: #999999;
+    
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-bg-tertiary: #eeeeee;
+    
+    --color-border: #e0e0e0;
+    --color-border-focus: var(--color-primary);
+
+    /* Typography */
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+}
+
+/* ========================================
+   Layout & Container
+   ======================================== */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    min-height: 100vh;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+
+header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+header h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+}
+
+/* ========================================
+   Form Styles
+   ======================================== */
+
+.settings-form {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.form-section {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--color-border);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section legend {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    display: block;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
+}
+
+/* ========================================
+   Input Validation States
+   ======================================== */
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid:not([value=""]) {
+    border-color: var(--color-error);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group select:valid {
+    border-color: var(--color-success);
+}
+
+.error-message {
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.help-text {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+}
+
+/* ========================================
+   Checkbox & Radio Styles
+   ======================================== */
+
+.checkbox-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"],
+.checkbox-label input[type="radio"] {
+    margin-right: var(--spacing-md);
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.checkbox-label span {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+}
+
+.checkbox-label input:focus {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Form Row (Multi-column)
+   ======================================== */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 140px;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-border);
+}
+
+/* ========================================
+   Messages
+   ======================================== */
+
+.success-message {
+    display: none;
+    padding: var(--spacing-lg);
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+footer {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .form-section legend {
+        font-size: var(--font-size-lg);
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group select {
+        font-size: 16px; /* Prevents mobile zoom on focus */
+    }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .form-group input,
+    .form-group select {
+        border-width: 2px;
+    }
+}
