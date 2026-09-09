@@ -1,0 +1,572 @@
+/* ========================================
+   Root & Custom Properties
+   ======================================== */
+
+:root {
+    /* Colors - Farm-themed palette */
+    --color-primary: #2d6a4f;
+    --color-primary-light: #52b788;
+    --color-primary-dark: #1b4332;
+    --color-success: #52b788;
+    --color-error: #dc3545;
+    --color-error-light: #f8d7da;
+    --color-error-border: #f5c6cb;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f5f5f5;
+    --color-neutral-200: #e9e9e9;
+    --color-neutral-300: #d0d0d0;
+    --color-neutral-400: #999;
+    --color-neutral-500: #666;
+    --color-neutral-600: #333;
+    --color-neutral-700: #1a1a1a;
+
+    --color-background: #ffffff;
+    --color-text: var(--color-neutral-700);
+    --color-text-light: var(--color-neutral-500);
+    --color-text-lighter: var(--color-neutral-400);
+    --color-border: var(--color-neutral-300);
+    --color-border-dark: var(--color-neutral-400);
+
+    /* Typography */
+    --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-mono: 'Courier New', Courier, monospace;
+
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* Spacing - 8px base */
+    --spacing-xs: 0.25rem;    /* 4px */
+    --spacing-sm: 0.5rem;     /* 8px */
+    --spacing-md: 1rem;       /* 16px */
+    --spacing-lg: 1.5rem;     /* 24px */
+    --spacing-xl: 2rem;       /* 32px */
+    --spacing-2xl: 3rem;      /* 48px */
+    --spacing-3xl: 4rem;      /* 64px */
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-focus: 0 0 0 3px rgba(45, 106, 79, 0.1), 0 0 0 3px rgba(45, 106, 79, 0.5);
+
+    /* Border radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.375rem;
+    --border-radius-lg: 0.5rem;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+}
+
+/* ========================================
+   Global Styles
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text);
+    background-color: var(--color-neutral-50);
+}
+
+main {
+    display: block;
+}
+
+/* ========================================
+   Container & Layout
+   ======================================== */
+
+.settings-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.settings-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.settings-header h1 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+}
+
+.settings-subtitle {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* ========================================
+   Form Styles
+   ======================================== */
+
+.settings-form {
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 0;
+}
+
+.form-section {
+    border: none;
+    margin: 0;
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    display: block;
+    margin: 0 0 var(--spacing-lg) 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-dark);
+}
+
+.section-description {
+    margin: 0 0 var(--spacing-lg) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* ========================================
+   Form Groups & Controls
+   ======================================== */
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+.required-indicator,
+.optional-indicator {
+    color: var(--color-text-light);
+    font-weight: var(--font-weight-normal);
+}
+
+.required-indicator {
+    color: var(--color-error);
+    font-weight: var(--font-weight-semibold);
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    line-height: var(--line-height-normal);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--border-radius-md);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-input:hover:not(:disabled) {
+    border-color: var(--color-neutral-500);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-focus);
+}
+
+.form-input:disabled {
+    background-color: var(--color-neutral-100);
+    color: var(--color-text-lighter);
+    cursor: not-allowed;
+}
+
+/* Invalid state */
+.form-input[aria-invalid="true"] {
+    border-color: var(--color-error);
+}
+
+.form-input[aria-invalid="true"]:focus {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1), 0 0 0 3px rgba(220, 53, 69, 0.5);
+}
+
+/* Valid state */
+.form-input[aria-invalid="false"] {
+    border-color: var(--color-success);
+}
+
+/* Coordinates Row */
+.coordinates-group {
+    border: none;
+    margin: var(--spacing-lg) 0 0 0;
+    padding: var(--spacing-lg);
+    background-color: var(--color-neutral-50);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.coordinates-legend {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.coordinates-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.coordinates-input {
+    font-family: var(--font-family-mono);
+}
+
+/* ========================================
+   Checkboxes & Radios
+   ======================================== */
+
+.checkbox-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.checkbox-group .form-check:last-child {
+    margin-bottom: 0;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    margin-right: var(--spacing-md);
+    margin-top: 0.125rem;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
+.form-checkbox:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.form-check label {
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ========================================
+   Error Messages
+   ======================================== */
+
+.error-message {
+    display: none;
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+    font-weight: var(--font-weight-medium);
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* ========================================
+   Success Message
+   ======================================== */
+
+.success-message {
+    display: none;
+    margin: 0 0 var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+    animation: slideDown var(--transition-base) ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    background-color: var(--color-neutral-50);
+    border-top: 1px solid var(--color-border);
+}
+
+.btn {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    font-family: inherit;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-transform: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-neutral-300);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-neutral-400);
+    color: white;
+}
+
+/* ========================================
+   Tablet Styles (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    .settings-container {
+        padding: var(--spacing-md);
+    }
+
+    .settings-header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .settings-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .form-section {
+        padding: var(--spacing-lg);
+    }
+
+    .coordinates-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .form-actions {
+        flex-direction: column;
+        padding: var(--spacing-lg);
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   Mobile Styles (480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .settings-container {
+        padding: var(--spacing-md);
+    }
+
+    .settings-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .settings-header h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .settings-subtitle {
+        font-size: var(--font-size-xs);
+    }
+
+    .form-section {
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+
+    label {
+        font-size: var(--font-size-xs);
+    }
+
+    .form-input {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .checkbox-group .form-check {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* ========================================
+   Accessibility: High Contrast Mode
+   ======================================== */
+
+@media (prefers-contrast: more) {
+    .form-input {
+        border-width: 2px;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .error-message {
+        text-decoration: underline;
+    }
+}
+
+/* ========================================
+   Accessibility: Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .settings-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .form-actions {
+        display: none;
+    }
+
+    .success-message {
+        display: none;
+    }
+
+    .error-message.show {
+        page-break-inside: avoid;
+    }
+}

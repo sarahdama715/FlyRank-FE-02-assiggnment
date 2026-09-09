@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Activity Planner - Settings</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <main class="settings-container">
+        <div class="settings-header">
+            <h1>Farm Activity Planner Settings</h1>
+            <p class="settings-subtitle">Manage your farm information, notifications, and preferences</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" aria-live="polite" aria-atomic="true" role="alert">
+            Settings saved successfully!
+        </div>
+
+        <form id="settingsForm" class="settings-form" novalidate>
+
+            <!-- Farm Information Section -->
+            <fieldset class="form-section">
+                <legend class="section-title">Farm Information</legend>
+
+                <div class="form-group">
+                    <label for="farmName">Farm Name <span class="required-indicator" aria-label="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="farmName" 
+                        name="farmName" 
+                        class="form-input"
+                        required
+                        placeholder="Enter your farm name">
+                    <div id="farmNameError" class="error-message" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="farmType">Farm Type <span class="required-indicator" aria-label="required">*</span></label>
+                    <select id="farmType" name="farmType" class="form-input" required>
+                        <option value="">Select a farm type</option>
+                        <option value="crop">Crop</option>
+                        <option value="livestock">Livestock</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="mixed">Mixed Farming</option>
+                        <option value="fruit">Fruit Orchard</option>
+                        <option value="vegetable">Vegetable Farm</option>
+                    </select>
+                    <div id="farmTypeError" class="error-message" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="farmLocation">Farm Location <span class="required-indicator" aria-label="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="farmLocation" 
+                        name="farmLocation" 
+                        class="form-input"
+                        required
+                        placeholder="e.g., County, State or City, Region">
+                    <div id="farmLocationError" class="error-message" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="farmSize">Farm Size (acres) <span class="required-indicator" aria-label="required">*</span></label>
+                    <input 
+                        type="number" 
+                        id="farmSize" 
+                        name="farmSize" 
+                        class="form-input"
+                        required
+                        min="0.01"
+                        step="0.1"
+                        placeholder="Enter farm size in acres">
+                    <div id="farmSizeError" class="error-message" role="alert"></div>
+                </div>
+
+                <fieldset class="coordinates-group">
+                    <legend class="coordinates-legend">Coordinates <span class="optional-indicator">(optional, both or neither required)</span></legend>
+                    
+                    <div class="coordinates-row">
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label>
+                            <input 
+                                type="number" 
+                                id="latitude" 
+                                name="latitude" 
+                                class="form-input coordinates-input"
+                                step="0.0001"
+                                placeholder="-90 to 90">
+                            <div id="latitudeError" class="error-message" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label>
+                            <input 
+                                type="number" 
+                                id="longitude" 
+                                name="longitude" 
+                                class="form-input coordinates-input"
+                                step="0.0001"
+                                placeholder="-180 to 180">
+                            <div id="longitudeError" class="error-message" role="alert"></div>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+
+            <!-- Notification Preferences Section -->
+            <fieldset class="form-section">
+                <legend class="section-title">Notification Preferences</legend>
+
+                <div class="checkbox-group">
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="smsAlerts" 
+                            name="smsAlerts"
+                            class="form-checkbox">
+                        <label for="smsAlerts">SMS Alerts</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="emailNotifications" 
+                            name="emailNotifications"
+                            class="form-checkbox">
+                        <label for="emailNotifications">Email Notifications</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notificationFrequency">Notification Frequency <span class="required-indicator" aria-label="required">*</span></label>
+                    <select id="notificationFrequency" name="notificationFrequency" class="form-input" required>
+                        <option value="">Select notification frequency</option>
+                        <option value="realtime">Real-time</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                    <div id="notificationFrequencyError" class="error-message" role="alert"></div>
+                </div>
+            </fieldset>
+
+            <!-- Activity Categories Section -->
+            <fieldset class="form-section">
+                <legend class="section-title">Activity Categories</legend>
+                <p class="section-description">Select the farm activities relevant to your operations</p>
+
+                <div class="checkbox-group">
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="planting" 
+                            name="activityCategories" 
+                            value="planting"
+                            class="form-checkbox">
+                        <label for="planting">Planting</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="harvesting" 
+                            name="activityCategories" 
+                            value="harvesting"
+                            class="form-checkbox">
+                        <label for="harvesting">Harvesting</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="irrigation" 
+                            name="activityCategories" 
+                            value="irrigation"
+                            class="form-checkbox">
+                        <label for="irrigation">Irrigation</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="weeding" 
+                            name="activityCategories" 
+                            value="weeding"
+                            class="form-checkbox">
+                        <label for="weeding">Weeding</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            id="spraying" 
+                            name="activityCategories" 
+                            value="spraying"
+                            class="form-checkbox">
+                        <label for="spraying">Spraying</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Contact Information Section -->
+            <fieldset class="form-section">
+                <legend class="section-title">Contact Information</legend>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required-indicator" aria-label="required">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input"
+                        required
+                        placeholder="your@email.com">
+                    <div id="emailError" class="error-message" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="optional-indicator">(optional)</span></label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form-input"
+                        placeholder="(123) 456-7890">
+                    <div id="phoneError" class="error-message" role="alert"></div>
+                </div>
+            </fieldset>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-primary">Save Settings</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="src/js/form-validation.js"></script>
+    <script src="src/js/settings-form.js"></script>
+</body>
+</html>
