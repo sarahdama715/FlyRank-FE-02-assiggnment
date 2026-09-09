@@ -20,6 +20,10 @@ Round 2 successfully rejected zero and negative acreage, kept optional checkboxe
 
 ## Comparison
 
-Round 2 required more planning and prompt-writing effort, but it reduced review and correction effort because important edge cases were specified before coding. Round 1 was faster to start but required more manual discovery and evaluation of AI assumptions. The most significant correctness improvement was changing farm size validation from allowing zero to requiring a value greater than zero. Accessibility and responsive requirements were also made explicit rather than being left to the AI's interpretation.
+## Comparison
 
-Overall, the precise prompt produced a more predictable implementation and made verification easier. The comparison shows that detailed requirements and explicit verification instructions reduce ambiguity and improve the reliability of AI-assisted development.
+Round 2 required more planning and prompt-writing effort, and it took approximately 3 hours including implementation, testing, and review. Round 1 took approximately 1.5 hours. Although Round 2 took longer overall, the additional time was spent defining requirements and verifying specific edge cases rather than discovering unexpected behavior after implementation.
+
+Round 1 was faster to start but required more manual discovery of AI assumptions. The most significant correctness improvement was changing farm size validation from allowing zero to requiring a value greater than zero. Round 2 also prevented notification and activity options from being selected without user input. Accessibility, keyboard navigation, responsive behavior, and reset behavior were explicitly defined and verified.
+
+Overall, the precise prompt produced a more predictable implementation and made verification easier, even though it took longer in this exercise. The comparison shows that detailed requirements, explicit edge cases, and verification instructions reduce ambiguity and make AI-assisted development easier to review.

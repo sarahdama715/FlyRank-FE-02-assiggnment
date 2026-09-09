@@ -55,7 +55,7 @@ MUST
 Write accessible, responsive UI by default.
 Handle loading, empty, and error states in UI components.
 Keep README.md and CLAUDE.md in sync with the actual repo state.
-Use the correct clone URL: https://github.com/sarahdama715/Front-End-AI-engineering-.git
+Use the correct clone URL: https://github.com/sarahdama715/Front-End-AI-engineering.git
 
 ## Farm Activity Planner Form Rules
 
