@@ -3,7 +3,7 @@ Project instructions for AI-assisted development on the FlyRank AI Frontend Engi
 ## Project Overview
 This is a frontend engineering internship repository for building AI-assisted web applications. The codebase prioritizes clarity, accessibility, and maintainability over speed of generation.
 **Author:** Sarah Ngumbao  
-**Repository:** https://github.com/sarahdama715/Front-End-AI-engineering-
+**Repository:** https://github.com/sarahdama715/Front-End-AI-engineering.git
 ## Tech Stack
 - HTML, CSS, JavaScript (vanilla unless a framework is explicitly added)
 - Node.js 20+ for tooling (when `package.json` exists)
@@ -56,6 +56,16 @@ Write accessible, responsive UI by default.
 Handle loading, empty, and error states in UI components.
 Keep README.md and CLAUDE.md in sync with the actual repo state.
 Use the correct clone URL: https://github.com/sarahdama715/Front-End-AI-engineering-.git
+
+## Farm Activity Planner Form Rules
+
+- Farm size must be greater than 0 acres. Zero and negative values are invalid.
+- Latitude and longitude are optional when both are empty, but if one coordinate is provided, the other must also be provided.
+- Latitude must be between -90 and 90, and longitude must be between -180 and 180.
+- Notification preference checkboxes must be unchecked by default unless the user explicitly selects them.
+- Farm activity category checkboxes must be unchecked by default unless the user explicitly selects them.
+- Form reset must return the form to its original empty/default state and clear validation and success messages.
+- Settings forms must be tested at mobile widths and with keyboard navigation before being considered complete.
 
 MUST NOT
 Add dependencies without stating why they are needed.
