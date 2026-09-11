@@ -1,4 +1,4 @@
-# FlyRank AI — Frontend Engineering Capstone
+# FlyRank AI — Frontend Engineering FE-02
 
 > AI-assisted frontend applications built with modern web standards and professional software engineering practices.
 
